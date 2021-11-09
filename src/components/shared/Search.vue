@@ -16,7 +16,7 @@
           class="item"
           :key="index">
         <router-link :to="`${routes.pure.detail}${elem.show.id}`">
-          {{ elem.show.name }} ({{ elem.show.premiered.substring(0, 4) }})
+          {{ mixItemNameWithDate(elem.show.name, elem.show.premiered) }}
         </router-link>
       </li>
     </ul>
@@ -58,6 +58,12 @@ export default {
     },
     onFocus() {
       this.states.isListVisible = true;
+    },
+    mixItemNameWithDate(name, date) {
+      if (date === null) {
+        return name;
+      }
+      return `${name} (${date.substring(0, 4)})`;
     },
   },
   data() {
