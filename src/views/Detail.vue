@@ -36,40 +36,40 @@
       </div>
       <box class="mt-30 mb-30">
         <table class="info">
-          <tr>
+          <tr v-if="mainData.rating.average !== null">
             <th class="info-key">Rating</th>
             <td class="info-value">
-              {{ mainData.rating.average === null ? '---' : mainData.rating.average }}
+              {{ mainData.rating.average }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.genres.length !== 0">
             <th class="info-key">Genres</th>
             <td class="info-value">
-              {{ mainData.genres.length === 0 ? '---' : mainData.genres.join(', ') }}
+              {{ mainData.genres.join(', ') }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.language !== null">
             <th class="info-key">Language</th>
             <td class="info-value">
-              {{ mainData.language === null ? '---' : mainData.language }}
+              {{ mainData.language === null }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.status !== null">
             <th class="info-key">Status</th>
             <td class="info-value">
-              {{ mainData.status === null ? '---' : mainData.status }}
+              {{ mainData.status === null }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.runtime !== null">
             <th class="info-key">Runtime</th>
             <td class="info-value">
-              {{ mainData.runtime === null ? '---' : mainData.runtime }}
+              {{ mainData.runtime === null }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.premiered !== null">
             <th class="info-key">Premiered</th>
             <td class="info-value">
-              {{ mainData.premiered === null ? '---' : mainData.premiered }}
+              {{ mainData.premiered }}
             </td>
           </tr>
           <tr v-if="mainData.schedule !== null">
@@ -78,10 +78,10 @@
               Each {{ mainData.schedule.days.join(', ') }} at {{ mainData.schedule.time }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mainData.network !== null">
             <th class="info-key">Channel's name</th>
             <td class="info-value">
-              {{ mainData.network.name === null ? '---' : mainData.network.name }}
+              {{ mainData.network.name }}
             </td>
           </tr>
           <tr v-if="mainData.officialSite !== null">
