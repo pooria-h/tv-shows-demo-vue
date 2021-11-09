@@ -35,11 +35,13 @@ export default {
   name: 'Search',
   computed: {
     hasNoResult() {
-      return this.result.length === 0 && this.searchValue.length !== 0;
+      return this.result.length === 0 && this.searchValue.length !== 0
+          && this.states.isFetchingData === false;
     },
   },
   methods: {
     search: _.debounce(function (event) {
+      this.states.isFetchingData = true;
       this.searchValue = event.target.value.trim();
       if (this.searchValue.length === 0) {
         this.result = [];
@@ -47,8 +49,10 @@ export default {
       }
       axios.get(URLs.search, { params: { q: this.searchValue } }).then((res) => {
         this.result = res.data;
+        this.states.isFetchingData = false;
       }).catch((error) => {
         console.error(error);
+        this.states.isFetchingData = false;
       });
     }, 500),
     onBlur() {
@@ -74,6 +78,7 @@ export default {
       searchValue: '',
       states: {
         isListVisible: false,
+        isFetchingData: true,
       },
     };
   },
