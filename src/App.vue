@@ -5,18 +5,8 @@
 </template>
 
 <script>
-import Names from '@/enums/Names';
-
 export default {
   name: 'App',
-  watch: {
-    $route: {
-      immediate: true,
-      handler(to) {
-        document.title = `${Names.projectTitle} - ${to.meta.title}`;
-      },
-    },
-  },
 };
 </script>
 

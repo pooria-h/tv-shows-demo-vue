@@ -103,6 +103,7 @@ export default {
   },
   created() {
     this.getMainData();
+    document.title = Names.projectTitle;
   },
   data() {
     return {

@@ -108,6 +108,7 @@
 
 <script>
 import URLs from '@/enums/URLs';
+import Names from '@/enums/Names';
 import Search from '@/components/shared/Search.vue';
 import SkeletonLoader from '@/components/shared/SkeletonLoader.vue';
 import Box from '@/components/shared/Box.vue';
@@ -136,6 +137,7 @@ export default {
       this.axiosInstance.get(`${URLs.singleShow}${this.id}`).then((res) => {
         this.mainData = res.data;
         this.states.isDataFetched = true;
+        document.title = `${Names.projectTitle} - ${this.mainData.name}`;
       }).catch(() => {
         this.states.isDataFetched = true;
       });
