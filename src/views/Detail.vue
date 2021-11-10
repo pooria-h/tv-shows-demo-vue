@@ -51,19 +51,19 @@
           <tr v-if="mainData.language !== null">
             <th class="info-key">Language</th>
             <td class="info-value">
-              {{ mainData.language === null }}
+              {{ mainData.language }}
             </td>
           </tr>
           <tr v-if="mainData.status !== null">
             <th class="info-key">Status</th>
             <td class="info-value">
-              {{ mainData.status === null }}
+              {{ mainData.status }}
             </td>
           </tr>
           <tr v-if="mainData.runtime !== null">
             <th class="info-key">Runtime</th>
             <td class="info-value">
-              {{ mainData.runtime === null }}
+              {{ mainData.runtime }}
             </td>
           </tr>
           <tr v-if="mainData.premiered !== null">
