@@ -75,7 +75,10 @@
           <tr v-if="mainData.schedule !== null">
             <th class="info-key">Schedule</th>
             <td class="info-value">
-              Each {{ mainData.schedule.days.join(', ') }} at {{ mainData.schedule.time }}
+              Each {{ mainData.schedule.days.join(', ') }}
+              <template v-if="mainData.schedule.time !== null">
+                at {{ mainData.schedule.time }}
+              </template>
             </td>
           </tr>
           <tr v-if="mainData.network !== null">
