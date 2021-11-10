@@ -104,14 +104,15 @@
 </template>
 
 <script>
-import axios from 'axios';
 import URLs from '@/enums/URLs';
 import Search from '@/components/shared/Search.vue';
 import SkeletonLoader from '@/components/shared/SkeletonLoader.vue';
 import Box from '@/components/shared/Box.vue';
+import AxiosMixin from '@/mixins/AxiosMixin.vue';
 
 export default {
   name: 'Detail',
+  mixins: [AxiosMixin],
   components: {
     Search,
     SkeletonLoader,
@@ -129,11 +130,10 @@ export default {
   },
   methods: {
     getMainData() {
-      axios.get(`${URLs.singleShow}${this.id}`).then((res) => {
+      this.axiosInstance.get(`${URLs.singleShow}${this.id}`).then((res) => {
         this.mainData = res.data;
         this.states.isDataFetched = true;
-      }).catch((error) => {
-        console.error(error);
+      }).catch(() => {
         this.states.isDataFetched = true;
       });
     },

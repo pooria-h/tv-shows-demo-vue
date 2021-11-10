@@ -25,14 +25,15 @@
 </template>
 
 <script>
-import axios from 'axios';
 import _ from 'lodash';
 import Routes from '@/enums/Routes';
 import Names from '@/enums/Names';
 import URLs from '@/enums/URLs';
+import AxiosMixin from '@/mixins/AxiosMixin.vue';
 
 export default {
   name: 'Search',
+  mixins: [AxiosMixin],
   computed: {
     hasNoResult() {
       return this.result.length === 0 && this.searchValue.length !== 0
@@ -47,11 +48,10 @@ export default {
         this.result = [];
         return;
       }
-      axios.get(URLs.search, { params: { q: this.searchValue } }).then((res) => {
+      this.axiosInstance.get(URLs.search, { params: { q: this.searchValue } }).then((res) => {
         this.result = res.data;
         this.states.isFetchingData = false;
-      }).catch((error) => {
-        console.error(error);
+      }).catch(() => {
         this.states.isFetchingData = false;
       });
     }, 500),

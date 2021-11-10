@@ -1,28 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/Home.vue';
-import Routes from '@/enums/Routes';
-import Names from '@/enums/Names';
+import errors from './modules/errors';
+import home from './modules/home';
+import detail from './modules/detail';
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: Routes.home,
-    name: Names.home,
-    component: Home,
-    meta: {
-      title: Names.home.charAt(0).toUpperCase() + Names.home.slice(1),
-    },
-  },
-  {
-    path: Routes.detail,
-    name: Names.detail,
-    component: () => import('../views/Detail.vue'),
-    meta: {
-      title: Names.detail.charAt(0).toUpperCase() + Names.detail.slice(1),
-    },
-  },
+  ...errors,
+  home,
+  detail,
+  { path: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({

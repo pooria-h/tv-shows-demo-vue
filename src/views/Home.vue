@@ -53,7 +53,6 @@
 
 <script>
 import _ from 'lodash';
-import axios from 'axios';
 import HorizontalScroller from '@/components/home/HorizontalScroller.vue';
 import Box from '@/components/shared/Box.vue';
 import Search from '@/components/shared/Search.vue';
@@ -61,9 +60,11 @@ import SkeletonLoader from '@/components/shared/SkeletonLoader.vue';
 import URLs from '@/enums/URLs';
 import Routes from '@/enums/Routes';
 import Names from '@/enums/Names';
+import AxiosMixin from '@/mixins/AxiosMixin.vue';
 
 export default {
   name: 'Home',
+  mixins: [AxiosMixin],
   components: {
     HorizontalScroller,
     Box,
@@ -82,13 +83,12 @@ export default {
   },
   methods: {
     getMainData() {
-      axios.get(URLs.shows).then((res) => {
+      this.axiosInstance.get(URLs.shows).then((res) => {
         this.mainList = res.data;
         this.categorizeList();
         this.states.isDataFetched = true;
-      }).catch((error) => {
+      }).catch(() => {
         this.states.isDataFetched = true;
-        console.error(error);
       });
     },
     categorizeList() {
