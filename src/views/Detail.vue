@@ -167,6 +167,7 @@ export default {
 .head {
   display: flex;
   gap: 30px;
+  margin-bottom: 30px;
 }
 .imageWrapper {
   border-radius: 10px;
