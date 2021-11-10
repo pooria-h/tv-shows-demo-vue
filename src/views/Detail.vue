@@ -76,7 +76,7 @@
             <th class="info-key">Schedule</th>
             <td class="info-value">
               Each {{ mainData.schedule.days.join(', ') }}
-              <template v-if="mainData.schedule.time !== null">
+              <template v-if="mainData.schedule.time !== ''">
                 at {{ mainData.schedule.time }}
               </template>
             </td>
