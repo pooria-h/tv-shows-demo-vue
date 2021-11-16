@@ -4,6 +4,8 @@ __Demo:__
 https://pooria-h.github.io/tv-shows-demo-vue/
 
 ## Setup
+Use Node.js version 14 (LTS version which is 14.18.1)
+
 ```
 npm install
 npm run serve
