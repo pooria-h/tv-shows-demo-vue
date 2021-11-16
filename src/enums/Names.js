@@ -1,23 +1,33 @@
-class Names {
-  constructor() {
-    this.projectTitle = 'TV-Purya';
-    this.home = 'home';
-    this.detail = 'detail';
-    this.trans = {
-      tvShowsFromBestToWorst: 'TV Shows from Best to Worst',
-      noResult: 'No Result!',
-      genres: {
-        action: 'Action',
-        anime: 'Anime',
-        comedy: 'Comedy',
-        drama: 'Drama',
-        thriller: 'Thriller',
-        history: 'History',
-        horror: 'Horror',
-        family: 'Family',
-      },
-    };
-  }
-}
-
-export default new Names();
+export default {
+  projectTitle: 'TV-Purya',
+  home: 'home',
+  detail: 'detail',
+  trans: {
+    tvShowsFromBestToWorst: 'TV Shows from Best to Worst',
+    noResult: 'No Result!',
+    back: 'Back',
+    mainPage: 'Main pag',
+    rating: 'Rating',
+    genresText: 'Genres',
+    language: 'Language',
+    status: 'Status',
+    runtime: 'Runtime',
+    premiered: 'Premiered',
+    schedule: 'Schedule',
+    channelsName: 'Channel\'s name',
+    officialSite: 'Official Site',
+    linkOnTVMaze: 'Link on TV Maze',
+    link: 'Link',
+    searchPlaceholder: 'Search...',
+    genres: {
+      action: 'Action',
+      anime: 'Anime',
+      comedy: 'Comedy',
+      drama: 'Drama',
+      thriller: 'Thriller',
+      history: 'History',
+      horror: 'Horror',
+      family: 'Family',
+    },
+  },
+};

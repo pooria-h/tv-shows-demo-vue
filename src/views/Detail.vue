@@ -9,14 +9,14 @@
               class="navButton"
               type="button">
             <ion-icon name="arrow-back-outline"></ion-icon>
-            <span>Back</span>
+            <span>{{ names.trans.back }}</span>
           </button>
           <button
               @click="$router.push('/')"
               class="navButton"
               type="button">
             <ion-icon name="home-outline"></ion-icon>
-            <span>Main page</span>
+            <span>{{ names.trans.mainPage }}</span>
           </button>
         </div>
       </div>
@@ -37,43 +37,43 @@
       <box class="mt-30 mb-30">
         <table class="info">
           <tr v-if="mainData.rating.average !== null">
-            <th class="info-key">Rating</th>
+            <th class="info-key">{{ names.trans.rating }}</th>
             <td class="info-value">
               {{ mainData.rating.average }}
             </td>
           </tr>
           <tr v-if="mainData.genres.length !== 0">
-            <th class="info-key">Genres</th>
+            <th class="info-key">{{ names.trans.genresText }}</th>
             <td class="info-value">
               {{ mainData.genres.join(', ') }}
             </td>
           </tr>
           <tr v-if="mainData.language !== null">
-            <th class="info-key">Language</th>
+            <th class="info-key">{{ names.trans.language }}</th>
             <td class="info-value">
               {{ mainData.language }}
             </td>
           </tr>
           <tr v-if="mainData.status !== null">
-            <th class="info-key">Status</th>
+            <th class="info-key">{{ names.trans.status }}</th>
             <td class="info-value">
               {{ mainData.status }}
             </td>
           </tr>
           <tr v-if="mainData.runtime !== null">
-            <th class="info-key">Runtime</th>
+            <th class="info-key">{{ names.trans.runtime }}</th>
             <td class="info-value">
               {{ mainData.runtime }}
             </td>
           </tr>
           <tr v-if="mainData.premiered !== null">
-            <th class="info-key">Premiered</th>
+            <th class="info-key">{{ names.trans.premiered }}</th>
             <td class="info-value">
               {{ mainData.premiered }}
             </td>
           </tr>
           <tr v-if="mainData.schedule !== null">
-            <th class="info-key">Schedule</th>
+            <th class="info-key">{{ names.trans.schedule }}</th>
             <td class="info-value">
               Each {{ mainData.schedule.days.join(', ') }}
               <template v-if="mainData.schedule.time !== ''">
@@ -82,21 +82,21 @@
             </td>
           </tr>
           <tr v-if="mainData.network !== null">
-            <th class="info-key">Channel's name</th>
+            <th class="info-key">{{ names.trans.channelsName }}</th>
             <td class="info-value">
               {{ mainData.network.name }}
             </td>
           </tr>
           <tr v-if="mainData.officialSite !== null">
-            <th class="info-key">Official Site</th>
+            <th class="info-key">{{ names.trans.officialSite }}</th>
             <td class="info-value">
-              <a :href="mainData.officialSite" target=”_blank”>Link</a>
+              <a :href="mainData.officialSite" target=”_blank”>{{ names.trans.link }}</a>
             </td>
           </tr>
           <tr v-if="mainData.url !== null">
-            <th class="info-key">Link on TV Maze</th>
+            <th class="info-key">{{ names.trans.linkOnTVMaze }}</th>
             <td class="info-value">
-              <a :href="mainData.url" target=”_blank”>Link</a>
+              <a :href="mainData.url" target=”_blank”>{{ names.trans.link }}</a>
             </td>
           </tr>
         </table>
@@ -148,6 +148,7 @@ export default {
   },
   data() {
     return {
+      names: Names,
       mainData: {},
       showsList: [],
       states: {

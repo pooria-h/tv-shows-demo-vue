@@ -1,9 +1,7 @@
-class URLs {
-  constructor() {
-    this.shows = 'https://api.tvmaze.com/shows';
-    this.singleShow = 'https://api.tvmaze.com/shows/';
-    this.search = 'https://api.tvmaze.com/search/shows';
-  }
-}
+const BASE_URL = 'https://api.tvmaze.com';
 
-export default new URLs();
+export default {
+  shows: `${BASE_URL}/shows`,
+  singleShow: `${BASE_URL}/shows/`,
+  search: `${BASE_URL}/search/shows`,
+};

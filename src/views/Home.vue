@@ -76,7 +76,7 @@ export default {
       return this.mainList.filter((elem) => elem.rating.average !== null);
     },
     sortedShows() {
-      let sorted = _.sortBy(this.ratedShows, 'rating.average', 'desc');
+      let sorted = _.sortBy(this.ratedShows, 'rating.average');
       sorted = _.reverse(sorted);
       return sorted;
     },
