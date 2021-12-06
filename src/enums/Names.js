@@ -6,7 +6,7 @@ export default {
     tvShowsFromBestToWorst: 'TV Shows from Best to Worst',
     noResult: 'No Result!',
     back: 'Back',
-    mainPage: 'Main pag',
+    mainPage: 'Main page',
     rating: 'Rating',
     genresText: 'Genres',
     language: 'Language',
