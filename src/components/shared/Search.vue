@@ -58,7 +58,7 @@ export default {
     onBlur() {
       setTimeout(() => {
         this.states.isListVisible = false;
-      }, 50);
+      }, 500);
     },
     onFocus() {
       this.states.isListVisible = true;
